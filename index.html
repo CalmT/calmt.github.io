@@ -113,7 +113,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+						<a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
 					</div>
 				</section>
 				
@@ -170,6 +170,66 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-Javascript中类型比较" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/26/Javascript中类型比较/" class="article-date">
+  	<time datetime="2017-03-26T09:07:36.000Z" itemprop="datePublished">2017-03-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/26/Javascript中类型比较/">
+        Javascript中类型比较
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="抽象类型比较"><a href="#抽象类型比较" class="headerlink" title="抽象类型比较"></a>抽象类型比较</h2><p>比较运算 x==y, 其中 x 和 y 是值，产生 true 或者 false。这样的比较按如下方式进行：</p>
+<p>若 Type(x) 与 Type(y) 相同， 则<br>若 Type(x) 为 Undefined， 返回 true。<br>若 Type(x) 为 Null， 返回 true。<br>若 Type(x) 为 Number， 则<br>若 x 为 NaN， 返回 false。<br>若 y 为 NaN， 返回 false。<br>若 x 与 y 为相等数值， 返回 true。<br>若 x 为 +0 且 y 为 −0， 返回 true。<br>若 x 为 −0 且 y 为 +0， 返回 true。<br>返回 false。<br>若 Type(x) 为 String, 则当 x 和 y 为完全相同的字符序列（长度相等且相同字符在相同位置）时返回 true。 否则， 返回 false。<br>若 Type(x) 为 Boolean, 当 x 和 y 为同为 true 或者同为 false 时返回 true。 否则， 返回 false。<br>当 x 和 y 为引用同一对象时返回 true。否则，返回 false。<br>若 x 为 null 且 y 为 undefined， 返回 true。<br>若 x 为 undefined 且 y 为 null， 返回 true。<br>若 Type(x) 为 Number 且 Type(y) 为 String， 返回 comparison x == ToNumber(y) 的结果。<br>若 Type(x) 为 String 且 Type(y) 为 Number，返回比较 ToNumber(x) == y 的结果。<br>若 Type(x) 为 Boolean， 返回比较 ToNumber(x) == y 的结果。<br>若 Type(y) 为 Boolean， 返回比较 x == ToNumber(y) 的结果。<br>若 Type(x) 为 String 或 Number，且 Type(y) 为 Object，返回比较 x == ToPrimitive(y) 的结果。<br>若 Type(x) 为 Object 且 Type(y) 为 String 或 Number， 返回比较 ToPrimitive(x) == y 的结果。<br>返回 false。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-Welcome-to-utopia" class="article article-type-post" itemscope itemprop="blogPost">
   
