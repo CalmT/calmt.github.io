@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Javascript, 代码规范" />
 
 
 
@@ -87,22 +87,16 @@
 
 
 
-<meta name="description" content="文&amp;emsp;龙应台二十岁之前相信的很多东西，后来一件一件变成不相信。
-曾经相信过爱国，后来知道“国”的定义有问题，通常那谆谆善诱要你爱国的人所定义的“国”，不一定可爱，不一定值得爱，而且更可能值得推翻。
-曾经相信过历史，后来知道，原来历史的一半是编造。前朝史永远是后朝人在写，后朝人永远在否定前朝，他的后朝又来否定他，但是负负不一定得正，只是累积渐进的扭曲变形移位，使真相永远掩盖，无法复原。说“不">
+<meta name="description" content="最近在看O&apos;REILLY出版的Nicholas C.Zakas（《Javascript高级程序设计》、《Ajax高级程序设计》、《高性能Javascript》的作者）著的《编写可维护的Javascript》，里面提到的编码规范值得借鉴，故整理出一份自己的编码规范。遵循一份好的编程规范可以有效提升代码可读性，提高开发效率，便于代码维护。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="(不)相信">
-<meta property="og:url" content="https://calmt.github.io/2016/11/10/不-相信/index.html">
+<meta property="og:title" content="编写可维护的Javascript之编程风格">
+<meta property="og:url" content="https://calmt.github.io/2017/04/02/编写可维护的Javascript/index.html">
 <meta property="og:site_name" content="唯有孤独，恒常如新">
-<meta property="og:description" content="文&amp;emsp;龙应台二十岁之前相信的很多东西，后来一件一件变成不相信。
-曾经相信过爱国，后来知道“国”的定义有问题，通常那谆谆善诱要你爱国的人所定义的“国”，不一定可爱，不一定值得爱，而且更可能值得推翻。
-曾经相信过历史，后来知道，原来历史的一半是编造。前朝史永远是后朝人在写，后朝人永远在否定前朝，他的后朝又来否定他，但是负负不一定得正，只是累积渐进的扭曲变形移位，使真相永远掩盖，无法复原。说“不">
-<meta property="og:updated_time" content="2017-03-27T14:50:50.421Z">
+<meta property="og:description" content="最近在看O&apos;REILLY出版的Nicholas C.Zakas（《Javascript高级程序设计》、《Ajax高级程序设计》、《高性能Javascript》的作者）著的《编写可维护的Javascript》，里面提到的编码规范值得借鉴，故整理出一份自己的编码规范。遵循一份好的编程规范可以有效提升代码可读性，提高开发效率，便于代码维护。">
+<meta property="og:updated_time" content="2017-04-02T03:31:49.204Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="(不)相信">
-<meta name="twitter:description" content="文&amp;emsp;龙应台二十岁之前相信的很多东西，后来一件一件变成不相信。
-曾经相信过爱国，后来知道“国”的定义有问题，通常那谆谆善诱要你爱国的人所定义的“国”，不一定可爱，不一定值得爱，而且更可能值得推翻。
-曾经相信过历史，后来知道，原来历史的一半是编造。前朝史永远是后朝人在写，后朝人永远在否定前朝，他的后朝又来否定他，但是负负不一定得正，只是累积渐进的扭曲变形移位，使真相永远掩盖，无法复原。说“不">
+<meta name="twitter:title" content="编写可维护的Javascript之编程风格">
+<meta name="twitter:description" content="最近在看O&apos;REILLY出版的Nicholas C.Zakas（《Javascript高级程序设计》、《Ajax高级程序设计》、《高性能Javascript》的作者）著的《编写可维护的Javascript》，里面提到的编码规范值得借鉴，故整理出一份自己的编码规范。遵循一份好的编程规范可以有效提升代码可读性，提高开发效率，便于代码维护。">
 
 
 
@@ -130,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://calmt.github.io/2016/11/10/不-相信/"/>
+  <link rel="canonical" href="https://calmt.github.io/2017/04/02/编写可维护的Javascript/"/>
 
 
 
 
 
-  <title> (不)相信 | 唯有孤独，恒常如新 </title>
+  <title> 编写可维护的Javascript之编程风格 | 唯有孤独，恒常如新 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -265,7 +259,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://calmt.github.io/2016/11/10/不-相信/">
+    <link itemprop="mainEntityOfPage" href="https://calmt.github.io/2017/04/02/编写可维护的Javascript/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CalmWu">
@@ -286,7 +280,7 @@
             
             
               
-                (不)相信
+                编写可维护的Javascript之编程风格
               
             
           </h1>
@@ -301,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-10T21:19:51+08:00">
-                2016-11-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-02T09:40:12+08:00">
+                2017-04-02
               </time>
             
 
@@ -324,8 +318,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/阅读手记/" itemprop="url" rel="index">
-                    <span itemprop="name">阅读手记</span>
+                  <a href="/categories/编写可维护的Javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">编写可维护的Javascript</span>
                   </a>
                 </span>
 
@@ -341,7 +335,7 @@
 
           
           
-             <span id="/2016/11/10/不-相信/" class="leancloud_visitors" data-flag-title="(不)相信">
+             <span id="/2017/04/02/编写可维护的Javascript/" class="leancloud_visitors" data-flag-title="编写可维护的Javascript之编程风格">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -358,6 +352,10 @@
           
 
           
+              <div class="post-description">
+                  最近在看O'REILLY出版的Nicholas C.Zakas（《Javascript高级程序设计》、《Ajax高级程序设计》、《高性能Javascript》的作者）著的《编写可维护的Javascript》，里面提到的编码规范值得借鉴，故整理出一份自己的编码规范。遵循一份好的编程规范可以有效提升代码可读性，提高开发效率，便于代码维护。
+              </div>
+          
 
         </div>
       </header>
@@ -370,20 +368,30 @@
       
 
       
-        <p><center>文&emsp;龙应台</center><br>二十岁之前相信的很多东西，后来一件一件变成不相信。</p>
-<p>曾经相信过爱国，后来知道“国”的定义有问题，通常那谆谆善诱要你爱国的人所定义的“国”，不一定可爱，不一定值得爱，而且更可能值得推翻。</p>
-<p>曾经相信过历史，后来知道，原来历史的一半是编造。前朝史永远是后朝人在写，后朝人永远在否定前朝，他的后朝又来否定他，但是负负不一定得正，只是累积渐进的扭曲变形移位，使真相永远掩盖，无法复原。说“不容青史尽成灰”，表达的正是，不错，青史往往是要成灰的。指鹿為马，也往往是可以得逞和胜利的。</p>
-<a id="more"></a>
-<p>曾经相信过文明的力量，后来知道，原来人的愚昧和野蛮不因文明的进展而消失，只是愚昧野蛮有很多不同的面貌：纯朴的农民工人、深沉的知识份子、自信的政治领袖、替天行道的王师，都可能有不同形式的巨大愚昧和巨大野蛮，而且野蛮和文明之间，竟然只有极其细微、随时可以被抹掉的一线之隔。</p>
-<p>曾经相信过正义，后来知道，原来同时完全可以存在两种正义，而且彼此抵触，冰火不容。选择其中之一，正义同时就意味著不正义。而且，你绝对看不出，某些人在某一个特定的时机热烈主张某一个特定的正义，其中隐藏著深不可测的不正义。</p>
-<p>曾经相信过理想主义者，后来知道，理想主义者往往经不起权力的测试：一掌有权力，他或者变成当初自己誓死反对的“邪恶”，或者，他在现实的场域里不堪一击，一下就被弄权者拉下马来，完全没有机会去实现他的理想。理想主义者要有品格，才能不被权力腐化；理想主义者要有能力，才能将理想转化为实践。可是理想主义者兼具品格及能力者，几希。</p>
-<p>曾经相信过爱情，后来知道，原来爱情必须转化为亲情才可能持久，但是转化为亲情的爱情，犹如化入杯水中的冰块──它还是冰块吗？</p>
-<p>曾经相信过海枯石烂作为永恒不灭的表征，后来知道，原来海其实很容易枯，石，原来很容易烂。雨水，很可能不再来，沧海，不会再成桑田。原来，自己脚下所踩的地球，很容易被毁灭。海枯石烂的永恒，原来不存在。</p>
-<p>二十岁之前相信的很多东西，有些其实到今天也还相信。</p>
-<p>譬如国也许不可爱，但是土地和人可以爱。譬如史也许不能信，但是对于真相的追求可以无止尽。譬如文明也许脆弱不堪，但是除文明外我们其实别无依靠。譬如正义也许极为可疑，但是在乎正义比不在乎要安全。譬如理想主义者也许成就不了大事大业，但是没有他们社会一定不一样。譬如爱情总是幻灭的多，但是萤火虫在夜里发光从来就不是为了保持光。譬如海枯石烂的永恒也许不存在，但是如果一粒沙里有一个无穷的宇宙，一剎那里想必也有一个不变不移的时间。</p>
-<p>那么，有没有什么，是我二十岁前不相信的，现在却信了呢？</p>
-<p>有的，不过都是些最平凡的老生常谈。曾经不相信“性格决定命运”，现在相信了。曾经不相信“色即是空”，现在相信了。曾经不相信“船到桥头自然直”，现在有点信了。曾经不相信无法实证的事情，现在也还没准备相信，但是，有些无关实证的感觉，我明白了，譬如李叔同圆寂前最后的手书：“君子之交，其淡如水，执象而求，咫尺千里。问余何适，廓尔忘言，华枝春满，天心月圆。”</p>
-<p>相信与不相信之间，彷彿还有令人沉吟的深度。</p>
+        <h2 id="基本格式化"><a href="#基本格式化" class="headerlink" title="基本格式化"></a>基本格式化</h2><h3 id="缩进层级："><a href="#缩进层级：" class="headerlink" title="缩进层级："></a>缩进层级：</h3><p>以四个空格字符为一个缩进层级；可以在各编辑器中配置敲入Tab键时插入4个space。</p>
+<h3 id="语句结尾："><a href="#语句结尾：" class="headerlink" title="语句结尾："></a>语句结尾：</h3><p>尽管有赖于分析器的自动分号插入（ASI）机制，Javascript代码省略分号也是可以正常工作的，但是语句结尾<strong>不要省略分号</strong>。</p>
+<h3 id="行的长度："><a href="#行的长度：" class="headerlink" title="行的长度："></a>行的长度：</h3><p>将一行的长度限定在80个字符。</p>
+<h3 id="换行："><a href="#换行：" class="headerlink" title="换行："></a>换行：</h3><p>当一行长度达到单行最大字符数限制时，需要手动将一行拆成两行。通常是在<strong>运算符后</strong>(将运算符置于行尾，ASI就不会自作主张插入分号)换行，下一行增加两个层级（两个Tab）的缩进；当给变量赋值时，第二行位置应当和赋值运算符的位置保持对齐。</p>
+<h3 id="空行"><a href="#空行" class="headerlink" title="空行:"></a>空行:</h3><p>以下情景使用空行：</p>
+<blockquote>
+<p>每个流程控制语句（if和for等）之前，添加空行<br>方法之间<br>方法中的局部变量和第一条语句之间<br>多行或单行注释之前<br>方法内的逻辑片段之间cherubic空行，提高可读性</p>
+</blockquote>
+<h3 id="命名："><a href="#命名：" class="headerlink" title="命名："></a>命名：</h3><blockquote>
+<p>计算机科学只存在两个难题：缓存失效和命名。————Phil Karlton</p>
+</blockquote>
+<p>Javascript语言核心ECMAScript，遵照驼峰式大小写命名法，由小写字母开始，后续每个单词首字母都大写。<br>1、变量和函数：<br>以小驼峰命名法（Camel Case），变量命名以名词为前缀，函数命名以动词为前缀，避免无意义的命名<br>2、常量：<br>常量以大写字母和下划线命名，下划线用来分割单词<br>3、构造函数：<br>构造函数的命名遵照大驼峰命名法（Pascal Case）:由大写字母开始，后续每个单词首字母大写</p>
+<h3 id="直接量："><a href="#直接量：" class="headerlink" title="直接量："></a>直接量：</h3><p>1、字符串<br>2、数字<br>3、null：　用来当作对象的占位符<br>以下场景使用null:</p>
+<blockquote>
+<p>用来初始化一个变量，这个变量可能赋值为一个对象<br>用来和一个已经初始化的变量比较，这个变量可以是也可以不是一个对象<br>当函数的参数期望是对象时，用作参数传入<br>当函数的返回值期望是对象时，用作返回值输出</p>
+</blockquote>
+<p>以下场景不应当使用null：</p>
+<blockquote>
+<p>不要使用null来检测是否传入了某个参数<br>不要用null来检测一个未初始化的变量</p>
+</blockquote>
+<p>4、undefined: 表示一个等待被赋值的变量<br>未声明的变量和已声明但未赋值的变量（值为undefined），typeof运算符的返回结果都是”undefined”;</p>
+<p>5、对象直接量<br>定义对象直接量时，常在第一行包含左花括号，每一个属性的名值对都独占一行，并保持一个缩进，最后右花括号也独占一行</p>
+<p>6、数组直接量</p>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>1、单行注释<br>2、多行注释</p>
 
       
     </div>
@@ -411,6 +419,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Javascript/" rel="tag"># Javascript</a>
+          
+        </div>
+      
 
       
         
@@ -420,8 +434,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/30/深入理解Javascript-对象/" rel="next" title="深入理解Javascript--对象">
-                <i class="fa fa-chevron-left"></i> 深入理解Javascript--对象
+              <a href="/2017/03/28/ES6中改良的5个Javascript‘缺陷’/" rel="next" title="【译】ES6中改良的5个Javascript‘缺陷’">
+                <i class="fa fa-chevron-left"></i> 【译】ES6中改良的5个Javascript‘缺陷’
               </a>
             
           </div>
@@ -429,10 +443,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/28/ES6中改良的5个Javascript‘缺陷’/" rel="prev" title="【译】ES6中改良的5个Javascript‘缺陷’">
-                【译】ES6中改良的5个Javascript‘缺陷’ <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -479,8 +489,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/life.jpeg"
@@ -562,6 +581,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本格式化"><span class="nav-number">1.</span> <span class="nav-text">基本格式化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#缩进层级："><span class="nav-number">1.1.</span> <span class="nav-text">缩进层级：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语句结尾："><span class="nav-number">1.2.</span> <span class="nav-text">语句结尾：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#行的长度："><span class="nav-number">1.3.</span> <span class="nav-text">行的长度：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#换行："><span class="nav-number">1.4.</span> <span class="nav-text">换行：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空行"><span class="nav-number">1.5.</span> <span class="nav-text">空行:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命名："><span class="nav-number">1.6.</span> <span class="nav-text">命名：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直接量："><span class="nav-number">1.7.</span> <span class="nav-text">直接量：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">2.</span> <span class="nav-text">注释</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

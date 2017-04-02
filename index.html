@@ -260,6 +260,164 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://calmt.github.io/2017/04/02/编写可维护的Javascript/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CalmWu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/life.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="唯有孤独，恒常如新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/02/编写可维护的Javascript/" itemprop="url">
+                  编写可维护的Javascript之编程风格
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-02T09:40:12+08:00">
+                2017-04-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编写可维护的Javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">编写可维护的Javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/04/02/编写可维护的Javascript/" class="leancloud_visitors" data-flag-title="编写可维护的Javascript之编程风格">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          最近在看O'REILLY出版的Nicholas C.Zakas（《Javascript高级程序设计》、《Ajax高级程序设计》、《高性能Javascript》的作者）著的《编写可维护的Javascript》，里面提到的编码规范值得借鉴，故整理出一份自己的编码规范。遵循一份好的编程规范可以有效提升代码可读性，提高开发效率，便于代码维护。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/02/编写可维护的Javascript/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://calmt.github.io/2017/03/28/ES6中改良的5个Javascript‘缺陷’/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -846,7 +1004,8 @@
 
       
         
-          <p>1、数组（array）是按次序排列的一组值，数组本质上属于一种特殊的对象，typeof运算符会返回数组的类型是object；<br>可以用 Array.isArray判断一个值是否为数组，弥补 typeof运算符 的不足；</p>
+          
+            <h2 id="数组的定义"><a href="#数组的定义" class="headerlink" title="数组的定义"></a>数组的定义</h2><p>数组（array）是按次序排列的一组值，数组本质上属于一种特殊的对象，typeof运算符会返回数组的类型是object；<br>可以用 Array.isArray判断一个值是否为数组，弥补 typeof运算符 的不足；</p>
 <pre><code>
     var a = [1, 2, 3];
 
@@ -865,13 +1024,285 @@
     arr[1]    //'b'
 
 </code></pre>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/08/27/深入理解Javascript-数组/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+
+<h2 id="数组的长度"><a href="#数组的长度" class="headerlink" title="数组的长度"></a>数组的长度</h2><p>JavaScript以一个32位整数保存数组的元素个数，这意味着，数组成员最多有2<sup>32</sup> - 1个，即数组的length属性的最大值为 2<sup>32</sup> - 1；<br>数组的length属性是一个动态的值，等于键名中的最大整数加上1；数组中的数值键名不需要连续；标明数组是一个动态的数据结构，可以随时增减数组成员；length属性是可写的，如果设置length的值小于当前数组成员个数值，则数组的成员会自动减少到length设置的值；如果设置length的值大于当前数组成员个数值，则数组的成员个数会增加到这个值，新增的位置都是空值，读取新增的位置会返回undefined；<br>将数组清空的一个有效方法就是：将数组的length属性设为0；<br>由于数组本质上是对象的一种，所以可以为数组添加属性，如果将数组的键名设为字符串或小数，并不会增加length属性；如果为数组添加不合法的数字键名，数字键名会默认转为字符串键名；</p>
+<h2 id="类数组对象："><a href="#类数组对象：" class="headerlink" title="类数组对象："></a>类数组对象：</h2><p>具有length属性，但length属性不是动态值，不会随着成员变化而改变，无法使用数组的方法；<br>典型的类数组对象有： arguments对象、字符串、大多数DOM元素；</p>
+<pre><code>
+    // arguments对象
+    function args() { return arguments }
+    var arrayLike = args('a', 'b');
+
+    arrayLike[0] // 'a'
+    arrayLike.length // 2
+    arrayLike instanceof Array // false
+
+    // DOM元素集
+    var elts = document.getElementsByTagName('h3');
+    elts.length // 3
+    elts instanceof Array // false
+
+    // 字符串
+    'abc'[1] // 'b'
+    'abc'.length // 3
+    'abc' instanceof Array // false
+
+</code></pre>
+
+<p>数组的slice方法可以将类数组对象转为真正的数组；</p>
+<pre><code>
+    var arr = Array.prototype.slice.call(arrayLike);
+
+</code></pre>
+
+<p>遍历类数组对象可以用for循环，也可以用数组的forEach方法；</p>
+<pre><code>
+    // for循环
+    function logArgs() {
+      for (var i = 0; i < arguments.length; i++) {
+        console.log(i + '. ' + arguments[i]);
+      }
+    }
+
+    // forEach方法
+    function logArgs() {
+      Array.prototype.forEach.call(arguments, function (elem, i) {
+        console.log(i+'. '+elem);
+      });
+    }
+
+</code></pre>
+
+<h2 id="in运算符"><a href="#in运算符" class="headerlink" title="in运算符"></a>in运算符</h2><p>检查键名是否存在，适用于对象也适用于数组；存在返回true；如果数组的某个位置为空，in运算符返回false；</p>
+<pre><code>
+    var arr = [ 'a', 'b', 'c' ];
+    2 in arr  // true
+    '2' in arr // true
+    4 in arr // false
+
+</code></pre>
+<pre><code>
+    var arr = [];
+    arr[100] = 'a';
+    100 in arr // true
+    1 in arr // false
+
+</code></pre>
+
+<h2 id="数组空位"><a href="#数组空位" class="headerlink" title="数组空位"></a>数组空位</h2><p>当数组某个位置为空元素，即两个逗号之间没有任何值，则称数组存在空位；<br>数组空位可以读取，返回undefined；空位虽然返回undefined，但实际上该位置上没有任何值；虽然可以取到length属性，但是不能取到键名；<br>数组空位不影响length属性；<br>使用delete命令删除数组成员时，会形成空位，并且不影响length属性；<br>使用数组的forEach方法、for…in结构、以及Object.keys方法进行遍历，空位都会被跳过； 如果某个位置是undefined，遍历的时候就不会被跳过</p>
+<pre><code>
+    var a = [, , ,];
+    a.forEach(function (x, i) {
+      console.log(i + '. ' + x);
+    })
+    // 不产生任何输出
+    for (var i in a) {
+      console.log(i);
+    }
+    // 不产生任何输出
+    Object.keys(a)
+    // []
+
+</code></pre>
+<pre><code>
+    var a = [undefined, undefined, undefined];
+    a.forEach(function (x, i) {
+      console.log(i + '. ' + x);
+    });
+    // 0. undefined
+    // 1. undefined
+    // 2. undefined
+    for (var i in a) {
+        console.log(i);
+    }
+    // 0
+    // 1
+    // 2
+    Object.keys(a)
+    // ['0', '1', '2']
+
+</code></pre>
+
+<p>这就是说，空位就是数组没有这个元素，所以不会被遍历到，而undefined则表示数组有这个元素，值是undefined，所以遍历不会跳过。</p>
+<h2 id="数组的遍历"><a href="#数组的遍历" class="headerlink" title="数组的遍历"></a>数组的遍历</h2><h3 id="for…in循环"><a href="#for…in循环" class="headerlink" title="for…in循环"></a>for…in循环</h3><p>for…in不仅会遍历数组所有的数字键，还会遍历非数字键。可以用来遍历对象、数组；会跳过数组空位，不会跳过undefined；</p>
+<pre><code>
+    var a = [1, 2, 3];
+
+    for (var i in a) {
+      console.log(a[i]);
+    }
+
+</code></pre>
+
+<h3 id="for循环或while循环"><a href="#for循环或while循环" class="headerlink" title="for循环或while循环"></a>for循环或while循环</h3><p>不会跳过数组空位，空位返回undefined；</p>
+<pre><code>
+    var a = [1, 2, 3];
+
+    // for循环
+    for(var i = 0; i < a.length; i++) {
+      console.log(a[i]);
+    }
+
+    // while循环
+    var i = 0;
+    while (i < a.length) {
+      console.log(a[i]);
+      i++;
+    }
+
+    var l = a.length;  //逆向遍历
+    while (l--) {
+      console.log(a[l]);
+    }
+</code></pre>
+
+
+<h3 id="forEach方法"><a href="#forEach方法" class="headerlink" title="forEach方法"></a>forEach方法</h3><p>会跳过数组空位，不会跳过undefined ；</p>
+<pre><code>
+    var colors = ['red', 'green', 'blue'];
+    colors.forEach(function (color) {
+      console.log(color);
+    });
+
+</code></pre>
+
+<h3 id="map"><a href="#map" class="headerlink" title="map():"></a>map():</h3><h2 id="Array构造函数："><a href="#Array构造函数：" class="headerlink" title="Array构造函数："></a>Array构造函数：</h2><pre><code>
+    // 无参数时，返回一个空数组
+    new Array() // []
+    // 单个正整数参数，表示返回的新数组的长度
+    new Array(1) // [ ,]
+    new Array(2) // [ , ,]
+    // 非正整数的数值作为参数，会报错
+    new Array(3.2) // RangeError: Invalid array length
+    new Array(-3) // RangeError: Invalid array length
+    // 单个非正整数参数（比如字符串、布尔值、对象等），则该参数是返回的新数组的成员
+    new Array('abc') // ['abc']
+    new Array([1]) // [Array[1]]
+    // 多参数时，所有参数都是返回的新数组的成员
+    new Array(1, 2) // [1, 2]
+    new Array('a', 'b', 'c') // ['a', 'b', 'c']
+
+</code></pre>
+
+<p>没有参数时，返回一个空数组；<br>参数是一个正整数，返回的数组成员都是空位，length属性值为参数值，虽然读取数组成员返回undefined，但实际上没有任何值；<br>参数为非正整数的数值时，报错；<br>参数为单个非正整数参数（字符串、布尔值、对象等）时，则返回以参数为数组成员的新数组；<br>多个非正整数为参数时，所有参数都是返回的新数组成员；</p>
+<h2 id="Array实例的方法："><a href="#Array实例的方法：" class="headerlink" title="Array实例的方法："></a>Array实例的方法：</h2><h3 id="valueOf-NaN"><a href="#valueOf-NaN" class="headerlink" title="valueOf()"></a>valueOf()</h3><p>返回数组本身；</p>
+<h3 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a>toString()</h3><p>返回数组的字符串形式(去掉所有的’[]’)；</p>
+<pre><code>
+    var a = [1, 2, 3];
+    a.valueOf() // [1, 2, 3]
+    a.toString()  // "1, 2, 3"
+    var a = [1, 2, ['a', 'b']];   // "1, 2, a, b"
+</code></pre>
+
+
+<h3 id="push"><a href="#push" class="headerlink" title="push()"></a>push()</h3><p>1、push()用于在数组末端添加一个或多个元素，并返回添加新元素后数组的长度; 该方法会改变原数组;</p>
+<pre><code>
+    var a = [];
+
+    a.push(1) // 1
+    a.push('a') // 2
+    a.push(true, {}) // 4
+    a // [1, 'a', true, {}]
+</code></pre>
+
+
+<p>2、push()可以用于合并两个数组；</p>
+<pre><code>
+    var a = [1, 2, 3];
+    var b = [4, 5, 6];
+
+    Array.prototype.push.apply(a, b)
+    // 或者
+    a.push.apply(a, b)
+    // 上面两种写法等同于
+    a.push(4, 5, 6)
+
+    a // [1, 2, 3, 4, 5, 6]
+</code></pre>
+
+
+<p>3、push()还可以用于向对象添加元素，添加后的对象变为类数组对象， 即新加入元素的键对应数组的索引，并且对象有一个length属性。</p>
+<pre><code>
+    var a = {a: 1};
+
+    [].push.call(a, 2);
+    a // {a:1, 0:2, length: 1}
+
+    [].push.call(a, [3]);
+    a // {a:1, 0:2, 1:[3], length: 2}
+</code></pre>
+
+<h3 id="pop"><a href="#pop" class="headerlink" title="pop()"></a>pop()</h3><p>用于删除数组的最后一个元素，并返回该元素。注意，该方法会改变原数组。对空数组使用pop(),不会报错，但会返回undefined；</p>
+<h3 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h3><p>join()方法以参数作为分隔符，将所有数组成员组成一个字符串返回。如果不提供参数，默认用逗号分隔。 如果数组成员是undefined或null或空位，会被转成空字符串。 通过call方法，这个方法也可以用于类数组对象。</p>
+<h3 id="concat"><a href="#concat" class="headerlink" title="concat()"></a>concat()</h3><p>用于多个数组的合并。它将新数组的成员，添加到原数组的尾部，然后返回一个新数组，原数组不变。 除了接受数组作为参数，concat也可以接受其他类型的值作为参数。它们会作为新的元素，添加数组尾部。 如果不提供参数，concat方法返回当前数组的一个浅拷贝。所谓“浅拷贝”，指的是如果数组成员包括复合类型的值（比如对象），则新数组拷贝的是该值的引用。 事实上，只要原数组的成员中包含对象，concat方法不管有没有参数，总是返回该对象的引用。</p>
+<p>concat方法也可以用于将对象合并为数组，但是必须借助call方法。</p>
+<h3 id="shift"><a href="#shift" class="headerlink" title="shift()"></a>shift()</h3><p>用于删除数组的第一个元素，并返回该元素。注意，该方法会改变原数组。 shift方法可以遍历并清空一个数组。</p>
+<pre><code>
+    var list = [1, 2, 3, 4, 5, 6];
+    var item;
+
+    while (item = list.shift()) {
+      console.log(item);
+    }
+
+    list // []
+</code></pre>
+
+<h3 id="unshift"><a href="#unshift" class="headerlink" title="unshift()"></a>unshift()</h3><p>用于在数组的第一个位置添加元素，并返回添加新元素后的数组长度。注意，该方法会改变原数组。 unshift方法可以在数组头部添加多个元素。</p>
+<h3 id="reverse"><a href="#reverse" class="headerlink" title="reverse()"></a>reverse()</h3><p>用于颠倒数组中元素的顺序，返回改变后的数组。注意，该方法将改变原数组。</p>
+<h3 id="slice"><a href="#slice" class="headerlink" title="slice()"></a>slice()</h3><p>用于提取原数组的一部分，返回一个新数组，原数组不变。 第一个参数为起始位置（从0开始），第二个参数为终止位置（但该位置的元素本身不包括在内）。如果省略第二个参数或第二个参数值大于数组成员个数，则一直返回到原数组的最后一个成员。如果没有参数， 实际上等于返回一个原数组的拷贝。</p>
+<p>如果slice方法的参数是负数，则表示倒数计算的位置。 如果参数值大于数组成员的个数，或者第二个参数小于第一个参数，则返回空数组。<br>slice方法的一个重要应用，是将类似数组的对象转为真正的数组。</p>
+<pre><code>
+    Array.prototype.slice.call({ 0: 'a', 1: 'b', length: 2 })
+    // ['a', 'b']
+
+    Array.prototype.slice.call(document.querySelectorAll("div"));
+    Array.prototype.slice.call(arguments);
+</code></pre>
+
+<h3 id="splice"><a href="#splice" class="headerlink" title="splice()"></a>splice()</h3><p>用于删除原数组的一部分成员，并可以在被删除的位置添加入新的数组成员，返回值是被删除的元素。注意，该方法会改变原数组。 splice的第一个参数是删除的起始位置（从0开始），第二个参数是被删除的元素个数。如果后面还有更多的参数，则表示这些就是要被插入数组的新元素。<br>起始位置如果是负数，就表示从倒数位置开始删除。<br>如果只是单纯地插入元素，splice方法的第二个参数可以设为0。<br>如果只提供第一个参数，等同于将原数组在指定位置拆分成两个数组。</p>
+<h3 id="sort"><a href="#sort" class="headerlink" title="sort()"></a>sort()</h3><p>sort()方法对数组成员进行排序，默认是按照字典顺序排序。排序后，原数组将被改变。 数值会被先转成字符串，再按照字典顺序进行比较。<br>如果想让sort方法按照自定义方式排序，可以传入一个函数作为参数，表示按照自定义方法进行排序。该函数本身又接受两个参数，表示进行比较的两个元素。如果返回值大于0，表示第一个元素排在第二个元素后面；其他情况下，都是第一个元素排在第二个元素前面。</p>
+<pre><code>
+    [11, 101].sort()
+    // [101, 11]
+</code></pre>
+
+<h3 id="map-1"><a href="#map-1" class="headerlink" title="map()"></a>map()</h3><p>1、map()方法对数组的所有成员依次调用一个函数，根据函数结果返回一个新数组。原数组不变。<br>2、map还可以用于字符串等类数组对象，用来遍历字符串的每个字符。但是，不能直接使用，而要通过函数的call方法间接使用，或者先将字符串转为数组，然后使用。<br>3、map方法还可以接受第二个参数，表示回调函数执行时this所指向的对象。<br>如果数组有空位，map方法的回调函数在这个位置不会执行，会跳过数组的空位，但 不会跳过undefined和null。</p>
+<pre><code>
+    var f = function(n){ return n + 1 };
+
+    [1, undefined, 2].map(f) // [2, NaN, 3]
+    [1, null, 2].map(f) // [2, 1, 3]
+    [1, , 2].map(f) // [2, , 3]
+</code></pre>
+
+<h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach()"></a>forEach()</h3><p>forEach()方法与map方法很相似，也是遍历数组的所有成员，执行某种操作，但是forEach方法一般不返回值，只用来操作数据。如果需要有返回值，一般使用map方法。<br>forEach方法也可以接受第二个参数，用来绑定回调函数的this关键字。<br>forEach方法无法中断执行，总是会将所有成员遍历完。如果希望符合某种条件时，就中断遍历，要使用for循环。</p>
+<p>###filter()<br>filter方法的参数是一个函数，所有数组成员依次执行该函数，返回结果为true的成员组成一个新数组返回。该方法不会改变原数组。<br>filter方法还可以接受第二个参数，指定测试函数所在的上下文对象（即this对象）。</p>
+<pre><code>[1, 2, 3, 4, 5].filter(function (elem) {
+      return (elem > 3);
+    })
+    // [4, 5]
+</code></pre>
+
+<h3 id="some-、every"><a href="#some-、every" class="headerlink" title="some()、every()"></a>some()、every()</h3><p>接受一个函数作为参数，所有数组成员依次执行该函数，返回一个布尔值。该函数接受三个参数，依次是当前位置的成员、当前位置的序号和整个数组。</p>
+<p>some方法是只要有一个数组成员的返回值是true，则整个some方法的返回值就是true，否则false。<br>every方法则是所有数组成员的返回值都是true，才返回true，否则false。<br>对于空数组，some方法返回false，every方法返回true，回调函数都不会执行。</p>
+<pre><code>var arr = [1, 2, 3, 4, 5];
+    arr.some(function (elem, index, arr) {
+      return elem >= 3;
+    });
+    // true
+</code></pre>
+
+<pre><code>var arr = [1, 2, 3, 4, 5];
+    arr.every(function (elem, index, arr) {
+        return elem >= 3;
+    });
+    // false
+</code></pre>
+
+<h3 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf()"></a>indexOf()</h3><p>方法返回给定元素在数组中第一次出现的位置，如果没有出现则返回-1。 indexOf方法还可以接受第二个参数，表示搜索的开始位置。<br>lastIndexOf方法返回给定元素在数组中最后一次出现的位置，如果没有出现则返回-1。</p>
+<p>如果数组中包含NaN，这两个方法不适用，即无法确定数组成员是否包含NaN。 因为这两个方法内部，使用严格相等运算符（===）进行比较，而NaN是唯一一个不等于自身的值。</p>
+
+          
         
       
     </div>
@@ -1181,7 +1612,7 @@
 
       
         
-          <h2 id="1-修改滚动条颜色"><a href="#1-修改滚动条颜色" class="headerlink" title="1.修改滚动条颜色"></a>1.修改滚动条颜色</h2><p>SCROLLBAR-FACE-COLOR(立体滚动条凸出部分的颜色)<br>SCROLLBAR-HIGHLIGHT-COLOR(滚动条空白部分的颜色)<br>SCROLLBAR-SHADOW-COLOR(立体滚动条阴影的颜色)<br>SCROLLBAR-ARROW-COLOR(上下按钮上三角箭头的颜色)<br>SCROLLBAR-BASE-COLOR(滚动条的基本颜色)<br>SCROLLBAR-DARK-SHADOW-COLOR(立体滚动条强阴影的颜色)</p>
+          <h2 id="修改滚动条颜色"><a href="#修改滚动条颜色" class="headerlink" title="修改滚动条颜色"></a>修改滚动条颜色</h2><p>SCROLLBAR-FACE-COLOR(立体滚动条凸出部分的颜色)<br>SCROLLBAR-HIGHLIGHT-COLOR(滚动条空白部分的颜色)<br>SCROLLBAR-SHADOW-COLOR(立体滚动条阴影的颜色)<br>SCROLLBAR-ARROW-COLOR(上下按钮上三角箭头的颜色)<br>SCROLLBAR-BASE-COLOR(滚动条的基本颜色)<br>SCROLLBAR-DARK-SHADOW-COLOR(立体滚动条强阴影的颜色)</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2016/01/28/CSS中常用修改默认样式方法/#more" rel="contents">
@@ -1266,7 +1697,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1277,7 +1708,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

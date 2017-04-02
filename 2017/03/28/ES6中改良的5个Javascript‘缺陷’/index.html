@@ -103,7 +103,7 @@
 <meta property="og:image" content="https://calmt.github.io/2017/03/28/ES6中改良的5个Javascript‘缺陷’/8.jpg">
 <meta property="og:image" content="https://calmt.github.io/2017/03/28/ES6中改良的5个Javascript‘缺陷’/9.jpg">
 <meta property="og:image" content="https://calmt.github.io/2017/03/28/ES6中改良的5个Javascript‘缺陷’/10.jpg">
-<meta property="og:updated_time" content="2017-03-28T02:12:33.135Z">
+<meta property="og:updated_time" content="2017-04-02T02:47:50.023Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【译】ES6中改良的5个Javascript‘缺陷’">
 <meta name="twitter:description" content="ECMAScript 6 (ES6) 新特性可以分为新增语法（例如：class），增强 JavaScript 功能（例如：import），以及改良 JS “缺陷” （例如：let 关键字）。大部分博客将这三类新特性混在一起介绍，往往让 ES6 新手晕菜。因此我决定写下这篇文章仅仅介绍改良 JS “缺陷”的这部分特性。">
@@ -376,8 +376,8 @@
 
       
         <p>ECMAScript 6 (ES6) 新特性可以分为新增语法（例如：class），增强 JavaScript 功能（例如：import），以及改良 JS “缺陷” （例如：let 关键字）。大部分博客将这三类新特性混在一起介绍，往往让 ES6 新手晕菜。因此我决定写下这篇文章仅仅介绍改良 JS “缺陷”的这部分特性。<br><a id="more"></a></p>
-<h2 id="1-块级作用域"><a href="#1-块级作用域" class="headerlink" title="1.块级作用域"></a>1.块级作用域</h2><p>ES5 只有函数作用域（例如，我们必须将代码包在函数内来限制作用域），这导致很多问题。ES6 提供 let 和 const 来代替 var 声明变量，新的声明方式支持用大括号表示的块级作用域。</p>
-<h4 id="防止变量在作用域外被访问"><a href="#防止变量在作用域外被访问" class="headerlink" title="防止变量在作用域外被访问"></a>防止变量在作用域外被访问</h4><p>下图展示了 if 语句内声明的“bonus”变量在使用 let 的时候被限制在 if 的作用域内，这样不会影响到作用域外面的同名变量，这也是与大部分其他编程语言一致的行为。<br><img src="/2017/03/28/ES6中改良的5个Javascript‘缺陷’/1.jpg" alt="logo"></p>
+<h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><p>ES5 只有函数作用域（例如，我们必须将代码包在函数内来限制作用域），这导致很多问题。ES6 提供 let 和 const 来代替 var 声明变量，新的声明方式支持用大括号表示的块级作用域。</p>
+<h3 id="防止变量在作用域外被访问"><a href="#防止变量在作用域外被访问" class="headerlink" title="防止变量在作用域外被访问"></a>防止变量在作用域外被访问</h3><p>下图展示了 if 语句内声明的“bonus”变量在使用 let 的时候被限制在 if 的作用域内，这样不会影响到作用域外面的同名变量，这也是与大部分其他编程语言一致的行为。<br><img src="/2017/03/28/ES6中改良的5个Javascript‘缺陷’/1.jpg" alt="logo"></p>
 <h3 id="防止重复声明变量"><a href="#防止重复声明变量" class="headerlink" title="防止重复声明变量"></a>防止重复声明变量</h3><p>ES6 不允许在同一个作用域内用 let 或 const 重复声明同名变量。这对于防止在不同的 js 库中存在重复声明的函数表达式十分有帮助。</p>
 <p>例如下图的 add 函数：<br><img src="/2017/03/28/ES6中改良的5个Javascript‘缺陷’/2.jpg" alt="logo"></p>
 <h3 id="不再需要立即执行的函数表达式-IIFE"><a href="#不再需要立即执行的函数表达式-IIFE" class="headerlink" title="不再需要立即执行的函数表达式(IIFE)"></a>不再需要立即执行的函数表达式(IIFE)</h3><p>在 ES5 中，像下图中的例子，我们需要构造一个立即执行的函数表达式去保证我们不污染全局作用域。在 ES6， 我们可以使用更简单的大括号（{}），然后使用 const 或者 let 代替var 来达到同样的效果。</p>
@@ -386,21 +386,21 @@
 <p>下图演示了 Babel 如何通过重命名变量来模拟 “let” 和 “const”<br><img src="/2017/03/28/ES6中改良的5个Javascript‘缺陷’/4.jpg" alt="logo"></p>
 <h3 id="循环体中的闭包不再有问题"><a href="#循环体中的闭包不再有问题" class="headerlink" title="循环体中的闭包不再有问题"></a>循环体中的闭包不再有问题</h3><p>在 ES5 中，如果循环体内有产生一个闭包，访问闭包外的变量，会产生问题。在 ES6 中，你可以使用 “let” 来避免问题。</p>
 <p><img src="/2017/03/28/ES6中改良的5个Javascript‘缺陷’/5.jpg" alt="logo"><br>注意: 在这里你不能用 const ，因为 i 在变， 不过你可以在新的 for…of 循环中使用 const。</p>
-<h2 id="2-词法作用域的-“this”-通过箭头函数"><a href="#2-词法作用域的-“this”-通过箭头函数" class="headerlink" title="2.词法作用域的 “this” (通过箭头函数)"></a>2.词法作用域的 “this” (通过箭头函数)</h2><p>在 ES5 中，“this” 会随着函数调用位置和调用方式改变，这种变化无常给很多开发者带来过痛苦的经历。 ES6 通过箭头函数带来的词法作用域的 “this” 消除了这个问题。</p>
+<h2 id="词法作用域的-“this”-通过箭头函数"><a href="#词法作用域的-“this”-通过箭头函数" class="headerlink" title="词法作用域的 “this” (通过箭头函数)"></a>词法作用域的 “this” (通过箭头函数)</h2><p>在 ES5 中，“this” 会随着函数调用位置和调用方式改变，这种变化无常给很多开发者带来过痛苦的经历。 ES6 通过箭头函数带来的词法作用域的 “this” 消除了这个问题。</p>
 <p>词法作用域的 “this” 特性让变量的 “this” 总是指向词法声明时的那个对象。</p>
 <h3 id="“this”-问题和-ES5-中的两个解决方法"><a href="#“this”-问题和-ES5-中的两个解决方法" class="headerlink" title="“this” 问题和 ES5 中的两个解决方法:"></a>“this” 问题和 ES5 中的两个解决方法:</h3><p>在下图中，我们希望打印一个用户的名字和薪水。假设我们从服务器异步获取薪水数据。注意到当服务器返回结果时，函数里的 “this” 是 “window” 而不是 “person”。</p>
 <p><img src="/2017/03/28/ES6中改良的5个Javascript‘缺陷’/6.jpg" alt="logo"><br>ES5 中的 “this” 问题和两种解决方式</p>
 <h3 id="在-ES6-中的解决方法："><a href="#在-ES6-中的解决方法：" class="headerlink" title="在 ES6 中的解决方法："></a>在 ES6 中的解决方法：</h3><p>在 ES6 中简单使用箭头函数就可以自动获得词法作用域的 “this”</p>
 <p><img src="/2017/03/28/ES6中改良的5个Javascript‘缺陷’/7.jpg" alt="logo"><br>第16行代码演示了如何使用箭头函数</p>
 <p>下图演示了 Babel 如何将箭头函数转为普通的 ES5 函数：<br><img src="/2017/03/28/ES6中改良的5个Javascript‘缺陷’/8.jpg" alt="logo"></p>
-<h2 id="3-处理-“arguments”"><a href="#3-处理-“arguments”" class="headerlink" title="3. 处理 “arguments”"></a>3. 处理 “arguments”</h2><p>在 ES5 中，“arguments” 表现得像一个数组（例如：我们可以通过length来遍历它），但是它不是一个真正的数组。所以，一切数组方法，比如 sort、slice 等等都用不了。</p>
+<h2 id="处理-“arguments”"><a href="#处理-“arguments”" class="headerlink" title="处理 “arguments”"></a>处理 “arguments”</h2><p>在 ES5 中，“arguments” 表现得像一个数组（例如：我们可以通过length来遍历它），但是它不是一个真正的数组。所以，一切数组方法，比如 sort、slice 等等都用不了。</p>
 <p>在 ES6 中，我们可以使用一个新的特性叫做 rest 参数。它的形式为…参数名（比如：…args）。rest 参数是一个真正的数组，所以我们可以对它使用所有数组上可用的方法。</p>
 <p>下图演示 rest 参数的用法：<br><img src="/2017/03/28/ES6中改良的5个Javascript‘缺陷’/9.jpg" alt="logo"></p>
-<h2 id="4-类"><a href="#4-类" class="headerlink" title="4.类"></a>4.类</h2><p>从概念上讲，在 ES6 之前的 JS 中并没有和其他面向对象语言那样的“类”的概念。长时间里，人们把使用 new 关键字通过函数（也叫构造器）构造对象当做“类”来使用。</p>
+<h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><p>从概念上讲，在 ES6 之前的 JS 中并没有和其他面向对象语言那样的“类”的概念。长时间里，人们把使用 new 关键字通过函数（也叫构造器）构造对象当做“类”来使用。</p>
 <p>由于 JS 不支持原生的类，而只是通过原型来模拟，各种模拟类的方式相对于传统的面向对象方式来说非常混乱，尤其是处理当子类继承父类、子类要调用父类的方法等等需求时。</p>
 <p>ES6 带来了新的语法，与其他各种编程语言类似的语法，使得面向对象变得非常简单。</p>
 <p>下图对比在 ES5 和 ES6 中实现类：<br><img src="/2017/03/28/ES6中改良的5个Javascript‘缺陷’/10.jpg" alt="logo"><br>ES5 Vs ES6 (es6-features.org)</p>
-<h2 id="5-严格模式"><a href="#5-严格模式" class="headerlink" title="5.严格模式"></a>5.严格模式</h2><p>严格模式(use strict) 有助于防止问题用法，并且它也有助于安全使用 JavaScript。在 ES5 中, 严格模式是可选项，但是在 ES6 中，许多特性要求必须使用严格模式。 因此大多数开发者和 babel 之类的工具默认添加 use strict 到 JS 文件的头部，以确保整个 JS 文件的代码都采用严格模式，这个习惯有助于我们书写更好的 JavaScript。</p>
+<h2 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h2><p>严格模式(use strict) 有助于防止问题用法，并且它也有助于安全使用 JavaScript。在 ES5 中, 严格模式是可选项，但是在 ES6 中，许多特性要求必须使用严格模式。 因此大多数开发者和 babel 之类的工具默认添加 use strict 到 JS 文件的头部，以确保整个 JS 文件的代码都采用严格模式，这个习惯有助于我们书写更好的 JavaScript。</p>
 
       
     </div>
@@ -452,6 +452,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/02/编写可维护的Javascript/" rel="prev" title="编写可维护的Javascript之编程风格">
+                编写可维护的Javascript之编程风格 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -523,7 +527,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -534,7 +538,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -600,7 +604,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-块级作用域"><span class="nav-number">1.</span> <span class="nav-text">1.块级作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#防止变量在作用域外被访问"><span class="nav-number">1.0.1.</span> <span class="nav-text">防止变量在作用域外被访问</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防止重复声明变量"><span class="nav-number">1.1.</span> <span class="nav-text">防止重复声明变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不再需要立即执行的函数表达式-IIFE"><span class="nav-number">1.2.</span> <span class="nav-text">不再需要立即执行的函数表达式(IIFE)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Babel-一个转换-ES6-代码为-ES5-代码的工具"><span class="nav-number">1.3.</span> <span class="nav-text">Babel - 一个转换 ES6 代码为 ES5 代码的工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环体中的闭包不再有问题"><span class="nav-number">1.4.</span> <span class="nav-text">循环体中的闭包不再有问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-词法作用域的-“this”-通过箭头函数"><span class="nav-number">2.</span> <span class="nav-text">2.词法作用域的 “this” (通过箭头函数)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#“this”-问题和-ES5-中的两个解决方法"><span class="nav-number">2.1.</span> <span class="nav-text">“this” 问题和 ES5 中的两个解决方法:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-ES6-中的解决方法："><span class="nav-number">2.2.</span> <span class="nav-text">在 ES6 中的解决方法：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-处理-“arguments”"><span class="nav-number">3.</span> <span class="nav-text">3. 处理 “arguments”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-类"><span class="nav-number">4.</span> <span class="nav-text">4.类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-严格模式"><span class="nav-number">5.</span> <span class="nav-text">5.严格模式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#块级作用域"><span class="nav-number">1.</span> <span class="nav-text">块级作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#防止变量在作用域外被访问"><span class="nav-number">1.1.</span> <span class="nav-text">防止变量在作用域外被访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防止重复声明变量"><span class="nav-number">1.2.</span> <span class="nav-text">防止重复声明变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不再需要立即执行的函数表达式-IIFE"><span class="nav-number">1.3.</span> <span class="nav-text">不再需要立即执行的函数表达式(IIFE)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Babel-一个转换-ES6-代码为-ES5-代码的工具"><span class="nav-number">1.4.</span> <span class="nav-text">Babel - 一个转换 ES6 代码为 ES5 代码的工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环体中的闭包不再有问题"><span class="nav-number">1.5.</span> <span class="nav-text">循环体中的闭包不再有问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#词法作用域的-“this”-通过箭头函数"><span class="nav-number">2.</span> <span class="nav-text">词法作用域的 “this” (通过箭头函数)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#“this”-问题和-ES5-中的两个解决方法"><span class="nav-number">2.1.</span> <span class="nav-text">“this” 问题和 ES5 中的两个解决方法:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-ES6-中的解决方法："><span class="nav-number">2.2.</span> <span class="nav-text">在 ES6 中的解决方法：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理-“arguments”"><span class="nav-number">3.</span> <span class="nav-text">处理 “arguments”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类"><span class="nav-number">4.</span> <span class="nav-text">类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#严格模式"><span class="nav-number">5.</span> <span class="nav-text">严格模式</span></a></li></ol></div>
             
 
           </div>
